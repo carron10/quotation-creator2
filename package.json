@@ -1,7 +1,7 @@
 {
-  "name": "electron-tutorial-app",
-  "version": "0.4.1",
-  "productName": "React Electron App",
+  "name": "retail-quotation-creator",
+  "version": "1.0.0",
+  "productName": "Retail Quotation Creator",
   "main": "public/electron.js",
   "homepage": "./",
   "dependencies": {
@@ -26,13 +26,13 @@
     "new-version": "npm version --git-tag-version=false",
     "version": "echo 'starting postversion script'",
     "postversion": "LAST_VERSION=$(npm pkg get version | sed 's/\"//g')$REACT_APP_ENV_UPDATE_CHANNEL_SUFFIX && echo $LAST_VERSION && sed -i.bak \"s/\\\"version\\\": \\\"[0-9]\\.[0-9]\\.[0-9]\\\"/\\\"version\\\": \\\"$LAST_VERSION\\\"/g\" package.json",
-    "start": "export BROWSER=none && react-scripts start",
+    "start": "set BROWSER=none && react-scripts start",
     "build:dev": "env-cmd -f .env.dev npm run version && react-scripts build",
     "build:qa": "env-cmd -f .env.qa npm run version && react-scripts build",
     "build:prod": "env-cmd -f .env.prod npm run version && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "start-electron": "export ELECTRON_START_URL=http://localhost:3000 && electron .",
+    "start-electron": "set ELECTRON_START_URL=http://localhost:3000 && electron .",
     "package": "electron-builder build --mac --win -c.extraMetadata.main=build/electron.js --publish never",
     "publish": "electron-builder build --mac --win --publish always"
   },
@@ -60,21 +60,21 @@
   },
   "build": {
     "generateUpdatesFilesForAllChannels": true,
-    "appId": "cinarrtolga.electronapp",
-    "productName": "React Electron App",
-    "copyright": "Cinarrtolga",
+    "appId": "carron.apps",
+    "productName": "Retail Quotation Creator",
+    "copyright": "Chatsfly",
     "mac": {
       "publish": {
         "provider": "github",
-        "owner": "cinarrtolga",
-        "repo": "ART-React-Electron-App"
+        "owner": "carron10",
+        "repo": "Quotation-Creator2"
       }
     },
     "win": {
       "publish": {
         "provider": "github",
-        "owner": "cinarrtolga",
-        "repo": "ART-React-Electron-App"
+        "owner": "carron10",
+        "repo": "Quotation-Creator2"
       }
     },
     "files": [
@@ -83,7 +83,7 @@
     ],
     "publish": {
       "provider": "github",
-      "owner": "cinarrtolga"
+      "owner": "carron10"
     }
   }
 }
